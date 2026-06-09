@@ -1,0 +1,1523 @@
+Analysis & Synthesis report for Mod_Teste
+Tue Jun 09 17:39:55 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Mod_Teste|LCD_TEST:MyLCD|mLCD_ST
+  9. State Machine - |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|ST
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD
+ 14. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0
+ 15. Port Connectivity Checks: "ULA:ULARiscV"
+ 16. Port Connectivity Checks: "MUX2x1:MuxULASrc"
+ 17. Port Connectivity Checks: "BancodeRegs:banco"
+ 18. Port Connectivity Checks: "LCD_TEST:MyLCD"
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 09 17:39:55 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Mod_Teste                                       ;
+; Top-level Entity Name              ; Mod_Teste                                       ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 381                                             ;
+;     Total combinational functions  ; 324                                             ;
+;     Dedicated logic registers      ; 107                                             ;
+; Total registers                    ; 107                                             ;
+; Total pins                         ; 194                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; Mod_Teste          ; Mod_Teste          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; Mod_Teste.v                      ; yes             ; User Verilog HDL File        ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/Mod_Teste.v      ;         ;
+; LCD_TEST2.v                      ; yes             ; User Verilog HDL File        ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/LCD_TEST2.v      ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/LCD_Controller.v ;         ;
+; Decodificador.v                  ; yes             ; User Verilog HDL File        ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/Decodificador.v  ;         ;
+; BancodeRegs.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/BancodeRegs.sv   ;         ;
+; ULA.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/ULA.sv           ;         ;
+; MUX2x1.v                         ; yes             ; User Verilog HDL File        ; C:/Users/eduar/Documents/Disciplinas/Arquitetura de Sistemas/MUX2x1.v         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 381    ;
+;                                             ;        ;
+; Total combinational functions               ; 324    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 158    ;
+;     -- 3 input functions                    ; 102    ;
+;     -- <=2 input functions                  ; 64     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 241    ;
+;     -- arithmetic mode                      ; 83     ;
+;                                             ;        ;
+; Total registers                             ; 107    ;
+;     -- Dedicated logic registers            ; 107    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 194    ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; KEY[1] ;
+; Maximum fan-out                             ; 57     ;
+; Total fan-out                               ; 1523   ;
+; Average fan-out                             ; 2.44   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+; |Mod_Teste                 ; 324 (1)           ; 107 (0)      ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |Mod_Teste                                  ; work         ;
+;    |BancodeRegs:banco|     ; 51 (51)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|BancodeRegs:banco                ; work         ;
+;    |LCD_TEST:MyLCD|        ; 184 (163)         ; 51 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                   ; work         ;
+;       |LCD_Controller:u0|  ; 21 (21)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0 ; work         ;
+;    |MUX2x1:MuxULASrc|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|MUX2x1:MuxULASrc                 ; work         ;
+;    |ULA:ULARiscV|          ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ULA:ULARiscV                     ; work         ;
+;    |decodificador:disp0|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decodificador:disp0              ; work         ;
+;    |decodificador:disp1|   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decodificador:disp1              ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |Mod_Teste|LCD_TEST:MyLCD|mLCD_ST                                  ;
++----------------+----------------+----------------+----------------+----------------+
+; Name           ; mLCD_ST.000011 ; mLCD_ST.000010 ; mLCD_ST.000001 ; mLCD_ST.000000 ;
++----------------+----------------+----------------+----------------+----------------+
+; mLCD_ST.000000 ; 0              ; 0              ; 0              ; 0              ;
+; mLCD_ST.000001 ; 0              ; 0              ; 1              ; 1              ;
+; mLCD_ST.000010 ; 0              ; 1              ; 0              ; 1              ;
+; mLCD_ST.000011 ; 1              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|ST ;
++-------+-------+-------+-------+--------------------------------+
+; Name  ; ST.11 ; ST.10 ; ST.01 ; ST.00                          ;
++-------+-------+-------+-------+--------------------------------+
+; ST.00 ; 0     ; 0     ; 0     ; 0                              ;
+; ST.01 ; 0     ; 0     ; 1     ; 1                              ;
+; ST.10 ; 0     ; 1     ; 0     ; 1                              ;
+; ST.11 ; 1     ; 0     ; 0     ; 1                              ;
++-------+-------+-------+-------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; BancodeRegs:banco|registradores[31][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][31]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][30]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][29]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][28]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][27]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][26]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][25]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][24]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][23]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][22]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][21]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][20]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][19]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][18]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][17]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][16]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][15]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][14]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][13]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][12]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][11]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][10]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][9]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][8]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][7]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][6]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][5]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][4]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][3]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][2]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][1]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[8][0]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][31]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][30]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][29]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][28]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][27]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][26]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][25]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][24]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][23]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][22]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][21]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][20]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][19]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][18]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][17]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][16]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][15]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][14]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][13]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][12]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][11]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][10]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][9]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][8]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][7]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][6]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][5]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][4]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][3]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][2]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][1]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[9][0]   ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[10][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[11][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[12][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[13][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[14][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[15][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[16][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[17][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[18][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[19][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[20][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[21][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[22][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[23][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[24][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[25][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[26][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[27][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[28][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[29][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[30][0]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][31] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][30] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][29] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][28] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][27] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][26] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][25] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][24] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][23] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][22] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][21] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][20] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][19] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][18] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][17] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][16] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][15] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][14] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][13] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][12] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][11] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][10] ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][9]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][8]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][7]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][6]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][5]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][4]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][3]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][2]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[31][1]  ; Lost fanout                                 ;
+; BancodeRegs:banco|registradores[0][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[1][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[2][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[3][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[4][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[5][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[6][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][31]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][30]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][29]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][28]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][27]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][26]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][25]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][24]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][23]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][22]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][21]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][20]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][19]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][18]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][17]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][16]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][15]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][14]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][13]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][12]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][11]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][10]  ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][9]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[7][8]   ; Stuck at GND due to stuck port data_in      ;
+; BancodeRegs:banco|registradores[0][7]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][6]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][5]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][4]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][3]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][2]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][1]   ; Stuck at GND due to stuck port clock_enable ;
+; BancodeRegs:banco|registradores[0][0]   ; Stuck at GND due to stuck port clock_enable ;
+; LCD_TEST:MyLCD|mLCD_ST~8                ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|mLCD_ST~9                ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|mLCD_ST~10               ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|mLCD_ST~11               ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|mLCD_ST~12               ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|mLCD_ST~13               ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~8   ; Lost fanout                                 ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~9   ; Lost fanout                                 ;
+; Total Number of Removed Registers = 976 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 107   ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 107   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|mStart ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 110 LEs              ; 100 LEs                ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[0]             ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 14 LEs               ; 21 LEs                 ; No         ; |Mod_Teste|ULA:ULARiscV|Mux24                      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |Mod_Teste|BancodeRegs:banco|rd1[4]                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Selector1                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; LCD_INTIAL     ; 0     ; Signed Integer                     ;
+; LCD_RESTART    ; 4     ; Signed Integer                     ;
+; LCD_LINE1      ; 5     ; Signed Integer                     ;
+; LCD_CH_LINE    ; 21    ; Signed Integer                     ;
+; LCD_LINE2      ; 22    ; Signed Integer                     ;
+; LUT_SIZE       ; 37    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; CLK_Divide     ; 16    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:ULARiscV"                                                                                   ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; ULAResult[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "MUX2x1:MuxULASrc" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; b[2..0]  ; Input ; Info     ; Stuck at VCC   ;
+; b[31..3] ; Input ; Info     ; Stuck at GND   ;
++----------+-------+----------+----------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "BancodeRegs:banco" ;
++------------+-------+----------+---------------+
+; Port       ; Type  ; Severity ; Details       ;
++------------+-------+----------+---------------+
+; ra1[4..3]  ; Input ; Info     ; Stuck at GND  ;
+; ra2[4..2]  ; Input ; Info     ; Stuck at GND  ;
+; ra2[1]     ; Input ; Info     ; Stuck at VCC  ;
+; ra2[0]     ; Input ; Info     ; Stuck at GND  ;
+; wa3[4..3]  ; Input ; Info     ; Stuck at GND  ;
+; we3        ; Input ; Info     ; Stuck at VCC  ;
+; wd3[31..8] ; Input ; Info     ; Stuck at GND  ;
++------------+-------+----------+---------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "LCD_TEST:MyLCD"   ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; d0x1[7..6] ; Input ; Info     ; Stuck at GND ;
+; d0x1[4..0] ; Input ; Info     ; Stuck at GND ;
+; d0x1[5]    ; Input ; Info     ; Stuck at VCC ;
+; d0x2[7..6] ; Input ; Info     ; Stuck at GND ;
+; d0x2[4..0] ; Input ; Info     ; Stuck at GND ;
+; d0x2[5]    ; Input ; Info     ; Stuck at VCC ;
+; d0x3[7..6] ; Input ; Info     ; Stuck at GND ;
+; d0x3[4..0] ; Input ; Info     ; Stuck at GND ;
+; d0x3[5]    ; Input ; Info     ; Stuck at VCC ;
+; d0x5[7..6] ; Input ; Info     ; Stuck at GND ;
+; d0x5[4..0] ; Input ; Info     ; Stuck at GND ;
+; d0x5[5]    ; Input ; Info     ; Stuck at VCC ;
+; d1x2[7..6] ; Input ; Info     ; Stuck at GND ;
+; d1x2[4..0] ; Input ; Info     ; Stuck at GND ;
+; d1x2[5]    ; Input ; Info     ; Stuck at VCC ;
+; d1x3[7..6] ; Input ; Info     ; Stuck at GND ;
+; d1x3[4..0] ; Input ; Info     ; Stuck at GND ;
+; d1x3[5]    ; Input ; Info     ; Stuck at VCC ;
+; d1x4[7..6] ; Input ; Info     ; Stuck at GND ;
+; d1x4[4..0] ; Input ; Info     ; Stuck at GND ;
+; d1x4[5]    ; Input ; Info     ; Stuck at VCC ;
+; d1x5[7..6] ; Input ; Info     ; Stuck at GND ;
+; d1x5[4..0] ; Input ; Info     ; Stuck at GND ;
+; d1x5[5]    ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Jun 09 17:39:53 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file mod_teste.v
+    Info (12023): Found entity 1: Mod_Teste
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_test2.v
+    Info (12023): Found entity 1: LCD_TEST
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller.v
+    Info (12023): Found entity 1: LCD_Controller
+Info (12021): Found 1 design units, including 1 entities, in source file decodificador.v
+    Info (12023): Found entity 1: decodificador
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/parallel_reg.v
+    Info (12023): Found entity 1: parallel_reg
+Warning (12019): Can't analyze file -- file Mux32bits.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file bancoderegs.sv
+    Info (12023): Found entity 1: BancodeRegs
+Info (12021): Found 1 design units, including 1 entities, in source file ula.sv
+    Info (12023): Found entity 1: ULA
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1.v
+    Info (12023): Found entity 1: MUX2x1
+Info (12127): Elaborating entity "Mod_Teste" for the top level hierarchy
+Warning (10034): Output port "HEX2" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "HEX3" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "HEX4" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "HEX5" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "HEX6" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "HEX7" at Mod_Teste.v(9) has no driver
+Warning (10034): Output port "LEDG[7..1]" at Mod_Teste.v(10) has no driver
+Warning (10034): Output port "LEDR" at Mod_Teste.v(11) has no driver
+Warning (10034): Output port "UART_TXD" at Mod_Teste.v(13) has no driver
+Info (12128): Elaborating entity "LCD_TEST" for hierarchy "LCD_TEST:MyLCD"
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(60): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(69): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0"
+Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "BancodeRegs" for hierarchy "BancodeRegs:banco"
+Warning (10240): Verilog HDL Always Construct warning at BancodeRegs.sv(15): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "MUX2x1" for hierarchy "MUX2x1:MuxULASrc"
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULARiscV"
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:disp0"
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[5]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[7]" and its non-tri-state driver.
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "LCD_DATA[0]~synth"
+    Warning (13010): Node "LCD_DATA[1]~synth"
+    Warning (13010): Node "LCD_DATA[2]~synth"
+    Warning (13010): Node "LCD_DATA[3]~synth"
+    Warning (13010): Node "LCD_DATA[4]~synth"
+    Warning (13010): Node "LCD_DATA[5]~synth"
+    Warning (13010): Node "LCD_DATA[6]~synth"
+    Warning (13010): Node "LCD_DATA[7]~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at GND
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at GND
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX6[6]" is stuck at GND
+    Warning (13410): Pin "HEX6[5]" is stuck at GND
+    Warning (13410): Pin "HEX6[4]" is stuck at GND
+    Warning (13410): Pin "HEX6[3]" is stuck at GND
+    Warning (13410): Pin "HEX6[2]" is stuck at GND
+    Warning (13410): Pin "HEX6[1]" is stuck at GND
+    Warning (13410): Pin "HEX6[0]" is stuck at GND
+    Warning (13410): Pin "HEX7[6]" is stuck at GND
+    Warning (13410): Pin "HEX7[5]" is stuck at GND
+    Warning (13410): Pin "HEX7[4]" is stuck at GND
+    Warning (13410): Pin "HEX7[3]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+    Warning (13410): Pin "UART_TXD" is stuck at GND
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+Info (17049): 776 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_27"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "UART_RXD"
+Info (21057): Implemented 575 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 25 input pins
+    Info (21059): Implemented 89 output pins
+    Info (21060): Implemented 80 bidirectional pins
+    Info (21061): Implemented 381 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 110 warnings
+    Info: Peak virtual memory: 4608 megabytes
+    Info: Processing ended: Tue Jun 09 17:39:55 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

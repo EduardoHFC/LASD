@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\eduar\Documents\Disciplinas\Arquitetura de Sistemas\simulation\qsim
+vMod_Teste
+Z1 Ii4FNdjS;`3no;zGbfkIn_3
+Z2 VK`d1[?KbN;DoS]1hM94Qb3
+Z3 dC:\Users\eduar\Documents\Disciplinas\Arquitetura de Sistemas\simulation\qsim
+Z4 w1779386174
+Z5 8Mod_Teste.vo
+Z6 FMod_Teste.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|Mod_Teste.vo|
+Z9 o-work work -O0
+Z10 n@mod_@teste
+!i10b 1
+Z11 !s100 iF049gB45V?_;@@jXe`Mg1
+!s85 0
+Z12 !s108 1779386176.182000
+Z13 !s107 Mod_Teste.vo|
+!s101 -O0
+vMod_Teste_vlg_check_tst
+!i10b 1
+!s100 7F8gama7:_V03^9gM<Jd70
+IBEcN?9i8[Z8ljV0A4L^Pb0
+Z14 VZPVJ4FoTkGcgIh[2QZ^FP1
+R3
+Z15 w1779386173
+Z16 8Mod_Teste.vt
+Z17 FMod_Teste.vt
+L0 71
+R7
+r1
+!s85 0
+31
+Z18 !s108 1779386176.345000
+Z19 !s107 Mod_Teste.vt|
+Z20 !s90 -work|work|Mod_Teste.vt|
+!s101 -O0
+R9
+Z21 n@mod_@teste_vlg_check_tst
+vMod_Teste_vlg_sample_tst
+!i10b 1
+Z22 !s100 9^HOHK0^Ul?hKF1f@nY^c2
+Z23 I7[R7f0TGzma5IIj<NYS660
+Z24 VlG7R9WDMc;l1LOVf2;n[]1
+R3
+R15
+R16
+R17
+L0 29
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9
+Z25 n@mod_@teste_vlg_sample_tst
+vMod_Teste_vlg_vec_tst
+!i10b 1
+!s100 W20P>f4MVkS@ZU0DZG]SH3
+IBLn[59fc<7Tf]lRE;_1V31
+Z26 V4h^N8TEF^h^5beeNeGm?e0
+R3
+R15
+R16
+R17
+L0 363
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9
+Z27 n@mod_@teste_vlg_vec_tst

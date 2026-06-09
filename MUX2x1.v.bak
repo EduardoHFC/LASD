@@ -1,0 +1,8 @@
+module MUX2x1(input a, b, Sel,
+					output Out);
+
+	always @ (*) begin
+			Out = Sel ? b:a;
+			end
+	endmodule
+			
