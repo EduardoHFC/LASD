@@ -1,0 +1,60 @@
+module ControlUnity(
+    input  [6:0] Op,
+    input  [2:0] Func3,
+    input  [6:0] Func7,
+    output reg RegWrite,
+    output reg ULASrc,
+    output reg [2:0] ULAControl
+);
+
+    wire [16:0] data;
+
+    assign data = {Op, Func3, Func7};
+
+    always @(*) begin
+
+        RegWrite = 1'b0;
+        ULASrc = 1'b0;
+        ULAControl = 3'b000;
+
+        case (data)
+
+            17'b01100110000000000: begin // ADD
+                RegWrite = 1'b1;
+                ULASrc = 1'b0;
+                ULAControl = 3'b000;
+            end
+
+            17'b01100110000100000: begin // SUB
+                RegWrite = 1'b1;
+                ULASrc = 1'b0;
+                ULAControl = 3'b001;
+            end
+
+            17'b01100111110000000: begin // AND
+                RegWrite = 1'b1;
+                ULASrc = 1'b0;
+                ULAControl = 3'b010;
+            end
+
+            17'b01100111100000000: begin // OR
+                RegWrite = 1'b1;
+                ULASrc = 1'b0;
+                ULAControl = 3'b011;
+            end
+
+            17'b01100110100000000: begin // SLT
+                RegWrite = 1'b1;
+                ULASrc = 1'b0;
+                ULAControl = 3'b100;
+            end
+				17'b0010011000xxxxxxx: begin
+					RegWrite = 1'b1;
+					ULASrc = 1'b1;
+					ULAControl = 3'b000;
+
+        endcase
+
+    end
+
+endmodule

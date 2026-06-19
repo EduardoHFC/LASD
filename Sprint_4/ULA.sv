@@ -8,9 +8,9 @@ module ULA(
 always @ (*) begin
     case (ULAControl)
 
-        3'b000: ULAResult = SrcA + SrcB;
+        3'b000: ULAResult = SrcA + SrcB; // Soma o fio um com o fio 1 com o fio 2
 
-        3'b001: ULAResult = SrcA + ~SrcB + 1;
+        3'b001: ULAResult = SrcA + ~SrcB + 1; // 
 
         3'b010: ULAResult = SrcA & SrcB;
 

@@ -1,5 +1,5 @@
 Flow report for Mod_Teste
-Tue Jun 09 17:40:10 2026
+Thu Jun 18 21:56:12 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 09 17:40:10 2026           ;
+; Flow Status                        ; Successful - Thu Jun 18 21:56:12 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 343 / 33,216 ( 1 % )                            ;
-;     Total combinational functions  ; 324 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 107 / 33,216 ( < 1 % )                          ;
-; Total registers                    ; 107                                             ;
+; Total logic elements               ; 618 / 33,216 ( 2 % )                            ;
+;     Total combinational functions  ; 590 / 33,216 ( 2 % )                            ;
+;     Dedicated logic registers      ; 196 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 196                                             ;
 ; Total pins                         ; 194 / 475 ( 41 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/09/2026 17:39:53 ;
+; Start date & time ; 06/18/2026 21:55:48 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Mod_Teste           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 14071518929177.178103759333404        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 14071518929177.178183054840948        ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                    ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4598 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 4884 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4561 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4562 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4523 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4597 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 4885 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4561 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4567 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4518 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

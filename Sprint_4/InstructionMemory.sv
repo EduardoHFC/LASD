@@ -1,0 +1,29 @@
+/*O último elemento a ser implementado é a memória de instruções. Nessa sprint, deverá ser
+implementada uma memória puramente combinacional, com endereços parametrizáveis entre 10bits e
+32bits. Serão palavras de 32bits, endereçadas de 8 em 8 bits (ou seja, cada instrução de 32bits, ficará
+armazenada em 4 endereços consecutivos).*/
+
+module InstructionMemory #(
+    parameter ADDR_WIDTH = 10
+)(
+    input  [ADDR_WIDTH-1:0] A,
+    output reg [31:0] RD
+);
+
+    always @(*) begin
+        case (A)
+
+            32'h00000000: RD = 32'b000011110011_00000_000_00001_0010011; // addi x1, x0, 0xF3
+            32'h00000004: RD = 32'b000000001001_00000_000_00010_0010011; // addi x2, x0, 9
+            32'h00000008: RD = 32'b0000000_00010_00001_000_00010_0110011; // add x2, x1, x2
+            32'h0000000C: RD = 32'b0000000_00010_00001_111_00011_0110011; // and x3, x1, x2
+            32'h00000010: RD = 32'b0000000_00010_00001_110_00100_0110011; // or x4, x1, x2
+            32'h00000014: RD = 32'b0000000_00100_00011_010_00110_0110011; // slt x6, x3, x4
+            32'h00000018: RD = 32'b0100000_00110_00100_000_00111_0110011; // sub x7, x4, x6
+
+            default: RD = 32'b0;
+
+        endcase
+    end
+
+endmodule
